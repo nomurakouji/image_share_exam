@@ -5,7 +5,9 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all
   end
-
+  def confirm
+    @picture = Picture.new(picture_params)
+  end
   # GET /pictures/1 or /pictures/1.json
   def show
   end
@@ -57,13 +59,11 @@ class PicturesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_picture
-      @picture = Picture.find(params[:id])
-    end
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def picture_params
-      params.require(:picture).permit(:image, :content)
-    end
+  def picture_params
+    params.require(:picture).permit(:image, :image_cache, :content)
+  end
 end
