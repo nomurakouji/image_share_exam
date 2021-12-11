@@ -5,26 +5,23 @@ class PicturesController < ApplicationController
   def index
     @pictures = Picture.all
   end
-  def confirm
-    @picture = Picture.new(picture_params)
-  end
   # GET /pictures/1 or /pictures/1.json
   def show
   end
-
+  
   # GET /pictures/new
   def new
     @picture = Picture.new
   end
-
+  
   # GET /pictures/1/edit
   def edit
   end
-
+  
   # POST /pictures or /pictures.json
   def create
     @picture = Picture.new(picture_params)
-
+    
     respond_to do |format|
       if @picture.save
         format.html { redirect_to @picture, notice: "Picture was successfully created." }
@@ -35,7 +32,11 @@ class PicturesController < ApplicationController
       end
     end
   end
-
+  def confirm
+    @picture = Picture.new(picture_params)
+    render :new if @picture.invalid?
+  end
+  
   # PATCH/PUT /pictures/1 or /pictures/1.json
   def update
     respond_to do |format|
