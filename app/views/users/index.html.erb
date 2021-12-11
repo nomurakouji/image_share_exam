@@ -1,0 +1,17 @@
+<h1>ユーザー</h1>
+<table>
+  <tr>
+    <th>user</th>
+    <th>email</th>
+    <th>image</th>
+  </tr>
+<% @users.each do |user|%>
+  <tr>
+    <td><%=user.name%></td>
+    <td><%=user.email%></td>
+    <td><%=image_tag user.image.url%></td>
+    <td><%=link_to '詳細を確認する', user_path(user.id) %></td>
+    <td><%=link_to 'userを編集する', edit_user_path(user.id) %></td>
+  </tr>
+<% end %>
+</table>
