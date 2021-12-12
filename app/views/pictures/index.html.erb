@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Pictures</h1>
-
 <table>
   <tbody>
     <% @pictures.each do |picture| %>
       <tr>
-        <td><p>image:<%= image_tag picture.image.url %></p></td> 
-        <td><p>comment: <%= picture.content %></p></td>
+        <td><p>image:<br><%= image_tag picture.image.url %></p></td> 
+        <td><p>comment:<br> <%= picture.content %></p></td>
+        <td><p>name:<br> <%= picture.user.name %></p></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
         <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -15,7 +13,6 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%# <%= link_to 'New Picture', new_picture_path %> 

@@ -1259,3 +1259,1336 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 6570)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2384919915532844865)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserRefToPictures (20211212053129)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.8ms)[0m  [1m[35mALTER TABLE "pictures" ADD "user_id" bigint[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE  INDEX  "index_pictures_on_user_id" ON "pictures"  ("user_id")[0m
+  [1m[35m (13.4ms)[0m  [1m[35mALTER TABLE "pictures" ADD CONSTRAINT "fk_rails_3268570edc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211212053129"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2384919915532844865)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."user_id" = $1[0m  [["user_id", 7]]
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" ORDER BY "pictures"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" ORDER BY "pictures"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPicture Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = $1[0m  [["id", 13]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPicture Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+Started GET "/pictures" for ::1 at 2021-12-12 14:40:47 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 4992)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 14:40:47 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 7530)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 14:40:50 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 409)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 6618)
+
+
+Started GET "/users/new" for ::1 at 2021-12-12 14:40:54 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1770)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 21ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 12360)
+
+
+Started POST "/users" for ::1 at 2021-12-12 14:41:22 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"07mwY86VH/WbzGFIuTO2192dn3RdxGFh5iPVLmPkKqINvi0iVAiJY9S22MGLfQATLaUBxoGgVXu0dgJc25hocA==", "user"=>{"name"=>"baby@metal.com", "email"=>"baby@metal.com", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede60d07b0 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-pv6lt0.webp>, @original_filename="greeenPAR566721764.jpg.webp", @content_type="image/webp", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"greeenPAR566721764.jpg.webp\"\r\nContent-Type: image/webp\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "baby@metal.com"], ["email", "baby@metal.com"], ["password_digest", "$2a$12$fK7NSLnziqpI6JLdekwuSO3v343y9WaeMrFn9HKK4O152ahCmtJ.S"], ["created_at", "2021-12-12 14:41:22.980172"], ["updated_at", "2021-12-12 14:41:22.980172"], ["image", "greeenPAR566721764.jpg.webp"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 271ms (ActiveRecord: 1.6ms | Allocations: 5819)
+
+
+Started GET "/users/10" for ::1 at 2021-12-12 14:41:22 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1448)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 14:41:22 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 6560)
+
+
+Started POST "/sessions" for ::1 at 2021-12-12 14:41:27 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bM1g3n3/1anMjQqh+kdZJ/XiFoTAUy4p3fu23bRT7YHCW/TO90gBZoUXomVbXC0vqMoZFfUA4ITD63JQSN8DaA==", "session"=>{"email"=>"baby@metal.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "baby@metal.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/10
+Completed 302 Found in 265ms (ActiveRecord: 0.3ms | Allocations: 1576)
+
+
+Started GET "/users/10" for ::1 at 2021-12-12 14:41:28 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 0.7ms | Allocations: 7350)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:41:31 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 2.1ms | Allocations: 1189)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1591)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 11.0ms | ActiveRecord: 0.4ms | Allocations: 15761)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:41:49 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"r9CZYij1qDQyLTvH3znsnDXUJPGeIps9OvO5dF519hnVJZrr8KCJ/KmW2i9HPqniQf0hbufelRP+njbZnvdifg==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede7938fa0 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-hdvpmm.jpeg>, @original_filename="EaEhXjIUYAIYamn.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"EaEhXjIUYAIYamn.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"猫！猫！猫！"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.5ms | Allocations: 902)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 11533)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 14:41:59 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"JETNeCqdjI6uY8hSQKjrNznbchUNBStfwo9IcCt+i/6K0llooCpYQef5YJbhs58/ZPN9hDhW5fLcn4z91/JlFw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede3fa2480 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-8sgql.jpeg>, @original_filename="EaEhXjIUYAIYamn.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"EaEhXjIUYAIYamn.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"猫！猫！猫！"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.4ms | Allocations: 806)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 892)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 422 Unprocessable Entity in 17ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 9842)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:42:08 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (1.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:7
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 1.9ms | Allocations: 6839)
+
+
+Started GET "/users/10" for ::1 at 2021-12-12 14:42:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 179)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 1.1ms | Allocations: 6795)
+
+
+Started GET "/users" for ::1 at 2021-12-12 14:42:13 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 1.0ms | Allocations: 6874)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:42:16 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.8ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:7
+  Rendered pictures/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 643)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 1.2ms | Allocations: 6691)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:42:18 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.4ms | Allocations: 661)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 6794)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:48:31 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:7
+  Rendered pictures/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1013)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 1.3ms | Allocations: 8805)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:48:32 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 3.9ms | Allocations: 1040)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1374)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.5ms | Allocations: 7639)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:48:49 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"gnJs05dtSElxQL9TeAkCoQNfzeb8vWcIlKT8i1nXTgv4h29aTzhpger7XrvgDkffd3bIeYVBaSZQyXMmmVXabA==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede4159f80 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-ldo4qq.png>, @original_filename="スクリーンショット 2021-12-06 19.09.52.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"\xE3\x82\xB9\xE3\x82\xAF\xE3\x83\xAA\xE3\x83\xBC\xE3\x83\xB3\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\x83\xE3\x83\x88 2021-12-06 19.09.52.png\"\r\nContent-Type: image/png\r\n">, "content"=>"neco"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.2ms | Allocations: 824)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 910)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 8682)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:49:58 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:7
+  Rendered pictures/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1137)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 8.3ms | ActiveRecord: 5.8ms | Allocations: 16206)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:49:59 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.5ms | Allocations: 840)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 931)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 8.0ms | ActiveRecord: 2.6ms | Allocations: 10039)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:50:14 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"0Nt+qsOxW4VqdmT33qFOsITqPdZBQm6nHQOj+SJfejKqLn0jG+R6TfHNhR9GpgvO8MM4STi+YInZbixU4t3uVQ==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede0514700 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-lb2z9d.jpeg>, @original_filename="adpDSC_7336-300x200.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"adpDSC_7336-300x200.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Fujiyama!!"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 3.4ms | Allocations: 960)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 0.3ms | Allocations: 9203)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 14:50:17 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"tHBH6RMbhGjAyQYb2JD8DtSb4z/FpJ1N8I/UpkuQgoEa5tP5maxQp4lTrt95i4gGibPsrvD3U+DunxArtxxsaA==", "picture"=>{"image"=>"/uploads/tmp/1639288214-234171925415334-0007-8238/adpDSC_7336-300x200.jpeg", "image_cache"=>"1639288214-234171925415334-0007-8238/adpDSC_7336-300x200.jpeg", "content"=>"Fujiyama!!"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (2.6ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "adpDSC_7336-300x200.jpeg"], ["content", "Fujiyama!!"], ["created_at", "2021-12-12 14:50:17.727002"], ["updated_at", "2021-12-12 14:50:17.727002"]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/15
+Completed 302 Found in 15ms (ActiveRecord: 3.7ms | Allocations: 5789)
+
+
+Started GET "/pictures/15" for ::1 at 2021-12-12 14:50:17 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 347)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 0.6ms | Allocations: 7416)
+
+
+Started GET "/pictures/15" for ::1 at 2021-12-12 14:50:40 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 0.7ms | Allocations: 8584)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:50:43 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:7
+  Rendered pictures/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1139)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 0.9ms | Allocations: 7458)
+
+
+Started GET "/users/10" for ::1 at 2021-12-12 14:50:47 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 8458)
+
+
+Started GET "/users" for ::1 at 2021-12-12 14:50:48 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1079)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.7ms | Allocations: 7421)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:50:50 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 3.1ms | Allocations: 1042)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1375)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.4ms | Allocations: 7552)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:51:04 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"PStsDWlo71taZiNMfErNlBsaIprBtkrFSZNsPC3FcL5H3m+EsT3Ok8HdwqTkTYjqbzMnBbhKROuN/uOR7Ufk2Q==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007feddfbcae10 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-ulpop6.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣寺"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 1.6ms | Allocations: 624)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 8399)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:51:50 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.3ms | Allocations: 661)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 6784)
+
+
+Started GET "/users/10" for ::1 at 2021-12-12 14:52:47 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 0.7ms | Allocations: 8609)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:52:50 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 3.4ms | Allocations: 1098)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1482)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 8645)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:53:02 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"1kaNN3r4vWIx6dQjpuonnnZ4WXbaISP4GCLgusQg05ess46+oq2cqqpSNcs+7WLgAlFc6aPdLdbcT28XBKJH8A==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede048e290 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-5hgpyo.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣寺"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 1.5ms | Allocations: 635)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 8550)
+
+
+Started GET "/pictures/confirm" for ::1 at 2021-12-12 14:53:19 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms | Allocations: 2608)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Picture with 'id'=confirm:
+  app/controllers/pictures_controller.rb:64:in `set_picture'
+
+Started POST "/__better_errors/da8fbe49a9f69d03/variables" for ::1 at 2021-12-12 14:53:19 +0900
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:53:27 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"x9QzlbP0CBnBHHYK9prLFPwPUU7/n6+MpWZqBX+16lJpQqeFOUPc1oiG3s5Xgb8coSde38rMYSG7dq6IgzkEuw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede06143f8 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-oqy04r.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣寺"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 1.4ms | Allocations: 764)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 10130)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 14:53:29 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"prxjlq0AWFQSKbf+Vee11TKO8+g20hlEpXFLZf1oa68IKveGJ7eMm1uzHzr0/MHdb6b8eQOB1+m7YY/oAeSFRg==", "picture"=>{"image"=>"/uploads/tmp/1639288407-905919545746424-0010-8004/0adpkkj--300x231.jpeg", "image_cache"=>"1639288407-905919545746424-0010-8004/0adpkkj--300x231.jpeg", "content"=>"金閣寺"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (0.3ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "0adpkkj--300x231.jpeg"], ["content", "金閣寺"], ["created_at", "2021-12-12 14:53:29.792597"], ["updated_at", "2021-12-12 14:53:29.792597"]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/16
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms | Allocations: 5551)
+
+
+Started GET "/pictures/16" for ::1 at 2021-12-12 14:53:29 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 7097)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:53:32 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  Rendered pictures/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1303)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.8ms | Allocations: 7512)
+
+
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" ORDER BY "pictures"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/pictures/new" for ::1 at 2021-12-12 14:59:02 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 2.4ms | Allocations: 1191)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1593)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 14.8ms | ActiveRecord: 0.6ms | Allocations: 19634)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 14:59:15 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"3ZPDUKGPy6u2IdSFm55zs8nWQs5MeRM4yy6r0JiZ8PSnZsDZedrqYy2aNW0DmTbNvf9HUTWFHRYPQyR9WBtkkw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fede48ca260 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-7743-a2o8i4.jpeg>, @original_filename="0adpDSC_1114--300x200.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpDSC_1114--300x200.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"鳥居"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 6.1ms | Allocations: 546)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 49.6ms | ActiveRecord: 0.3ms | Allocations: 8549)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 14:59:16 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"On/6U79U/ld4mZfpybQDzJ0K70N2/GoLGLbEgtkzIzeU6W5DNeMqmDEDPy1or3fEwCLg0kOvpKYGpgAPJb/N3g==", "picture"=>{"image"=>"/uploads/tmp/1639288755-756498319530512-0011-1243/0adpDSC_1114--300x200.jpeg", "image_cache"=>"1639288755-756498319530512-0011-1243/0adpDSC_1114--300x200.jpeg", "content"=>"鳥居"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (0.9ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "0adpDSC_1114--300x200.jpeg"], ["content", "鳥居"], ["created_at", "2021-12-12 14:59:16.968368"], ["updated_at", "2021-12-12 14:59:16.968368"]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/17
+Completed 302 Found in 13ms (ActiveRecord: 2.5ms | Allocations: 5615)
+
+
+Started GET "/pictures/17" for ::1 at 2021-12-12 14:59:16 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 158)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 7078)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 14:59:18 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  Rendered pictures/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.8ms | Allocations: 7350)
+
+
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2384919915532844865)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2384919915532844865)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "aaa"], ["email", "aaa@aaa.com"], ["password_digest", "$2a$12$Ki.r1OTuz5i3sPL.MKXdkOKRkw1L4FqD/hwjNtqdxjJ80McqfsGby"], ["created_at", "2021-12-12 15:13:01.374060"], ["updated_at", "2021-12-12 15:13:01.374060"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPicture Load (1.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+Started DELETE "/pictures/17" for ::1 at 2021-12-12 15:22:46 +0900
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PicturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b1fbvy2kqIThSblorexDJ+offo7YYIb0Mkyye2KYo/PBwU+vpxN8S6jTEawM9zcvtzdxH+0zSFksXHb2nhRNGg==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:66:in `set_picture'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:57:in `destroy'
+  [1m[36mPicture Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/pictures_controller.rb:57:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/pictures
+Completed 302 Found in 61ms (ActiveRecord: 10.9ms | Allocations: 18878)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 15:22:46 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  Rendered pictures/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1904)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 27.7ms | ActiveRecord: 0.7ms | Allocations: 12698)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 15:22:48 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 11.4ms | Allocations: 3123)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3499)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 21.9ms | ActiveRecord: 0.4ms | Allocations: 10072)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 15:23:04 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"jp5xOJ6N2AqbPsM1DtYmN7vUUZRXbdi77CH8+a+MStT0a3KxRtj5wgCFIt2W0WNJz/1UCy6R1pUoTHNUbw7esw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9fb33cb4c8 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-9805-6ewt4a.jpeg>, @original_filename="adpDSC_3274-300x200.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"adpDSC_3274-300x200.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"お寺"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 3.0ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 0.4ms | Allocations: 9658)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 15:23:06 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"80+CODwcTHmH95B0hl3bT+QG9h7TunjV8ResI1xMx1xd2RYotquYts5tOLAnRq9HuS75j+bptnjvB2iuoMAptQ==", "picture"=>{"image"=>"/uploads/tmp/1639290184-425405572937383-0001-7215/adpDSC_3274-300x200.jpeg", "image_cache"=>"1639290184-425405572937383-0001-7215/adpDSC_3274-300x200.jpeg", "content"=>"お寺"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (1.0ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "adpDSC_3274-300x200.jpeg"], ["content", "お寺"], ["created_at", "2021-12-12 15:23:06.795042"], ["updated_at", "2021-12-12 15:23:06.795042"]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/18
+Completed 302 Found in 10263510ms (ActiveRecord: 2.7ms | Allocations: 69249)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2384919915532844865)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserRefToPictures (20211212053129)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.0ms)[0m  [1m[35mALTER TABLE "pictures" DROP CONSTRAINT "fk_rails_3268570edc"[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "pictures" DROP COLUMN "user_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20211212053129"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2384919915532844865)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPicture Load (0.9ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mPicture Destroy (1.3ms)[0m  [1m[31mDELETE FROM "pictures"[0m
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mUser Destroy (1.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2384919915532844865)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToPictures (20211212092705)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2384919915532844865)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2384919915532844865)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReferencesToPictures (20211212093801)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "pictures" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_pictures_on_user_id" ON "pictures"  ("user_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "pictures" ADD CONSTRAINT "fk_rails_3268570edc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20211212093801"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2384919915532844865)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-12-12 18:41:52 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nomurakouji/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nomurakouji/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.0.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.6ms | Allocations: 418)
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 3195)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 18:41:56 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 11.7ms | Allocations: 7092)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 18:41:56 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.3ms | Allocations: 12536)
+
+
+Started GET "/users/new" for ::1 at 2021-12-12 18:42:00 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 4.0ms | Allocations: 13254)
+
+
+Started POST "/users" for ::1 at 2021-12-12 18:42:14 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"nEBdKU5rAB5U6Lz6Dt7uOOmyBCt65VdUgb7mr5255GZCR8Bo1PaWiBuSBXM8kFj8GYqamaaBY07T6zHdJcWmtA==", "user"=>{"name"=>"baby@metal.com", "email"=>"baby@metal.com", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb696273388 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-chuhjp.webp>, @original_filename="onisanGFVL1361.jpg.webp", @content_type="image/webp", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"onisanGFVL1361.jpg.webp\"\r\nContent-Type: image/webp\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "baby@metal.com"], ["email", "baby@metal.com"], ["password_digest", "$2a$12$9eh9hi.UGeJJmd4kX0iLKOr/fy7C5wNlHvcBL8N0JuKBd84T5kpI6"], ["created_at", "2021-12-12 18:42:14.743267"], ["updated_at", "2021-12-12 18:42:14.743267"], ["image", "onisanGFVL1361.jpg.webp"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 272ms (ActiveRecord: 2.0ms | Allocations: 6789)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 18:42:14 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1331)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 18:42:14 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 6612)
+
+
+Started POST "/sessions" for ::1 at 2021-12-12 18:42:20 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"A9Q+6nldyp38kq8sLkGUOOiiHgjD2IacZytNu6Wp6cGtQqr68+oeUrUIB+iPWuAwtYoRmfaLSDF5O4k2WSUHKA==", "session"=>{"email"=>"baby@metal.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "baby@metal.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/12
+Completed 302 Found in 268ms (ActiveRecord: 0.5ms | Allocations: 1650)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 18:42:20 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 7311)
+
+
+Started GET "/users" for ::1 at 2021-12-12 18:42:23 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1063)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.8ms | Allocations: 7258)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 18:42:37 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 3.5ms | Allocations: 1464)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1887)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 12.8ms | ActiveRecord: 3.4ms | Allocations: 14146)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 18:42:48 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"hEy0VM3Fu5skq6IskKiUk7nnjYIDoCxZSrhllzB20Qz+ubfdFZCaU78QQ8QIr9Htzc6IHXpcIneO1eo68PRFaw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb696f1c058 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-oztabu.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 11.8ms | Allocations: 4424)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 19.5ms | ActiveRecord: 0.3ms | Allocations: 12725)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 18:42:53 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"USBpN9YQ91PSIZ4cdXyZ4egs2ETiU9H1r1Pa0h1ag1H/tv0nXKcjnJu7NtjUZ+3ptQTX1dcAH1ixQx5f4dZtuA==", "picture"=>{"image"=>"/uploads/tmp/1639302168-211649693936603-0002-4074/0adpkkj--300x231.jpeg", "image_cache"=>"1639302168-211649693936603-0002-4074/0adpkkj--300x231.jpeg", "content"=>"金閣"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (5.3ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "0adpkkj--300x231.jpeg"], ["content", "金閣"], ["created_at", "2021-12-12 18:42:53.470550"], ["updated_at", "2021-12-12 18:42:53.470550"]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.9ms | Allocations: 7650)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "pictures" violates not-null constraint
+DETAIL:  Failing row contains (19, 0adpkkj--300x231.jpeg, 金閣, 2021-12-12 18:42:53.47055, 2021-12-12 18:42:53.47055, null).:
+  app/controllers/pictures_controller.rb:26:in `block in create'
+  app/controllers/pictures_controller.rb:25:in `create'
+
+Started POST "/__better_errors/d80e91ae64bae86d/variables" for ::1 at 2021-12-12 18:42:53 +0900
+Started POST "/__better_errors/d80e91ae64bae86d/variables" for ::1 at 2021-12-12 18:43:01 +0900
+Started GET "/pictures/confirm" for ::1 at 2021-12-12 18:59:24 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+Completed 404 Not Found in 17ms (ActiveRecord: 1.1ms | Allocations: 11339)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Picture with 'id'=confirm:
+  app/controllers/pictures_controller.rb:64:in `set_picture'
+
+Started POST "/__better_errors/47bb56033f0c1252/variables" for ::1 at 2021-12-12 18:59:24 +0900
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 18:59:26 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"jpounW7Du54P9vK72nWM5l6f3F4GwYGCY0dSGsO53uQgDLqN5HRvUUZsWn97bvjuA7fTzzOSTy99V5aXPzUwDQ==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb693615ca0 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-33vr9b.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 3.0ms | Allocations: 722)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 27.4ms | ActiveRecord: 0.4ms | Allocations: 12215)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 18:59:28 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"ijk1KcY9hcFJngmnkxLG8yFHjWWQJ9OjiHNxrheGi8Ukr6E5TIpRDgAEoWMyCbL7fG+C9KV0HQ6WY7Uj6wplLA==", "picture"=>{"image"=>"/uploads/tmp/1639303166-754707932299441-0003-2015/0adpkkj--300x231.jpeg", "image_cache"=>"1639303166-754707932299441-0003-2015/0adpkkj--300x231.jpeg", "content"=>"金閣"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (1.3ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "0adpkkj--300x231.jpeg"], ["content", "金閣"], ["created_at", "2021-12-12 18:59:28.424731"], ["updated_at", "2021-12-12 18:59:28.424731"], ["user_id", 12]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/20
+Completed 302 Found in 28ms (ActiveRecord: 2.5ms | Allocations: 5827)
+
+
+Started GET "/pictures/20" for ::1 at 2021-12-12 18:59:28 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  Rendered pictures/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 325)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 7176)
+
+
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/pictures" for ::1 at 2021-12-12 19:09:55 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1318)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 1.3ms | Allocations: 9035)
+
+
+Started GET "/pictures/20" for ::1 at 2021-12-12 19:09:58 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/show.html.erb:13
+  Rendered pictures/show.html.erb within layouts/application (Duration: 23.4ms | Allocations: 7687)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 0.8ms | Allocations: 14621)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:10:01 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 878)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 1.3ms | Allocations: 7020)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:11:00 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 0.8ms | Allocations: 9633)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:11:27 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.8ms | Allocations: 9673)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:11:47 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.7ms | Allocations: 9679)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 19:13:04 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 435)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.1ms | ActiveRecord: 0.3ms | Allocations: 8468)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:13:07 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1078)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 25.3ms | ActiveRecord: 0.8ms | Allocations: 7426)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:13:11 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1575)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 10.3ms | ActiveRecord: 0.6ms | Allocations: 7644)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 19:13:13 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 12.0ms | ActiveRecord: 1.0ms | Allocations: 6799)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:13:15 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 817)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 6864)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 19:13:18 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 0.8ms | Allocations: 6781)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:13:21 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.7ms | Allocations: 6859)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:13:26 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.9ms | Allocations: 7586)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 19:13:29 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.8ms | Allocations: 6794)
+
+
+Started GET "/users/12/edit" for ::1 at 2021-12-12 19:13:31 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 1.0ms | Allocations: 8124)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:13:34 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 6863)
+
+
+Started GET "/users/12" for ::1 at 2021-12-12 19:13:37 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.7ms | Allocations: 6785)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:13:41 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.8ms | Allocations: 6867)
+
+
+Started GET "/users/12/edit" for ::1 at 2021-12-12 19:13:49 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `edit'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 7529)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:13:52 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.8ms | Allocations: 6855)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 19:13:57 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 3.4ms | Allocations: 998)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1332)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.4ms | Allocations: 7503)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 19:14:07 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"o0Iq73VzB7IqqJXMN5GdInZCjO7VHJRIi4hYaeWzWbzZtylmrSYmerETdCSvlthcAmuJcazgmmZP5dfEJTHN2w==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb6935bd988 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-qdhdm8.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣寺"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 1.9ms | Allocations: 623)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 8393)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 19:14:09 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"FPMZIWAdxM4Gak1o+5zJXH9WWVS2oJV0XIdXZJ7FnNS6ZY0x6qoQAU/w5axah71UIn5WxYPzW9lCl5PpYklyPQ==", "picture"=>{"image"=>"/uploads/tmp/1639304047-958407855627294-0004-0720/0adpkkj--300x231.jpeg", "image_cache"=>"1639304047-958407855627294-0004-0720/0adpkkj--300x231.jpeg", "content"=>"金閣寺"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (0.9ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "0adpkkj--300x231.jpeg"], ["content", "金閣寺"], ["created_at", "2021-12-12 19:14:09.268356"], ["updated_at", "2021-12-12 19:14:09.268356"], ["user_id", 12]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/21
+Completed 302 Found in 19ms (ActiveRecord: 5.6ms | Allocations: 5374)
+
+
+Started GET "/pictures/21" for ::1 at 2021-12-12 19:14:09 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/show.html.erb:13
+  Rendered pictures/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 7776)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:14:12 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2412)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 8481)
+
+
+Started GET "/pictures/21/edit" for ::1 at 2021-12-12 19:14:15 +0900
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 1.4ms | Allocations: 734)
+  Rendered pictures/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 7715)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:14:16 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2413)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.9ms | Allocations: 8467)
+
+
+Started GET "/pictures/20/edit" for ::1 at 2021-12-12 19:14:17 +0900
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 2.4ms | Allocations: 711)
+  Rendered pictures/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 829)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 7431)
+
+
+Started PATCH "/pictures/20" for ::1 at 2021-12-12 19:14:27 +0900
+Processing by PicturesController#update as HTML
+  Parameters: {"authenticity_token"=>"HQeiDXaV3Qdmm7tI7hY/Lmy/fqBndq3U0q4dPFJ7Ld8uVzYOO4+ykQs8XO8aTWwrLa4DnkzD56aGayrCHBoyUA==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb6973fafe8 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-6fs80c.jpeg>, @original_filename="0adpDSC_1114--300x200.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpDSC_1114--300x200.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"鳥居"}, "commit"=>"Update Picture", "id"=>"20"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:43:in `block in update'
+  [1m[36mPicture Update (0.5ms)[0m  [1m[33mUPDATE "pictures" SET "image" = $1, "content" = $2, "updated_at" = $3 WHERE "pictures"."id" = $4[0m  [["image", "0adpDSC_1114--300x200.jpeg"], ["content", "鳥居"], ["updated_at", "2021-12-12 19:14:27.290103"], ["id", 20]]
+  ↳ app/controllers/pictures_controller.rb:43:in `block in update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:43:in `block in update'
+Redirected to http://localhost:3000/pictures/20
+Completed 302 Found in 15ms (ActiveRecord: 1.7ms | Allocations: 6560)
+
+
+Started GET "/pictures/20" for ::1 at 2021-12-12 19:14:27 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.3ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/show.html.erb:13
+  Rendered pictures/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 826)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 7472)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:14:28 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2413)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 1.1ms | Allocations: 8470)
+
+
