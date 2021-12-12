@@ -2592,3 +2592,573 @@ Processing by PicturesController#index as HTML
 Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 1.1ms | Allocations: 8470)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Haunter"], ["email", "bryant@mcclure.biz"], ["password_digest", "$2a$12$RLl6OgBi01NbbpwHr/Q1BO1ffn8ulPFZU9SADRJx1jpOFo5D3PBVC"], ["created_at", "2021-12-12 19:22:27.217461"], ["updated_at", "2021-12-12 19:22:27.217461"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Eevee"], ["email", "nanci_kertzmann@kilback-torphy.info"], ["password_digest", "$2a$12$MYxUpDC6jUwHIR/Wppdk/uqekqmOa35369onxUc.LMcEaadTqhytG"], ["created_at", "2021-12-12 19:22:27.461138"], ["updated_at", "2021-12-12 19:22:27.461138"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwrath"], ["email", "syreeta@mcglynn-weber.com"], ["password_digest", "$2a$12$GZn6zvjYs2Hbl..sdTbIdOiCzUM6/NkIUf3/ejbmqApsR2UJ2wJZ6"], ["created_at", "2021-12-12 19:22:27.699480"], ["updated_at", "2021-12-12 19:22:27.699480"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gastly"], ["email", "wilson.pfeffer@tromp.co"], ["password_digest", "$2a$12$b1/1HZT./8nd.kaN.hPJ0O5gD3KwQoKAGUyIkhzO/vgQCIgf2cSyW"], ["created_at", "2021-12-12 19:22:27.932517"], ["updated_at", "2021-12-12 19:22:27.932517"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arcanine"], ["email", "paul@wisoky.net"], ["password_digest", "$2a$12$D5cJJ0iDImYlw2rFM4Fy3u9YHGBM0kIuXv9sRk0kdwh7EfTC62hjm"], ["created_at", "2021-12-12 19:22:28.183670"], ["updated_at", "2021-12-12 19:22:28.183670"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sandslash"], ["email", "jacqueline_hauck@orn.name"], ["password_digest", "$2a$12$ChIig2Twp6XIQlvpRZ.Mu.OMv7w9.7c0.YeIXL2R9syowkVdd654m"], ["created_at", "2021-12-12 19:22:28.432071"], ["updated_at", "2021-12-12 19:22:28.432071"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Squirtle"], ["email", "karoline.kuvalis@herzog-keeling.name"], ["password_digest", "$2a$12$lbdlg9yvF5G2lWY2PhD6leA4nESRUeFvPTnX7VVSBMMvLI2f/cgt2"], ["created_at", "2021-12-12 19:22:28.667329"], ["updated_at", "2021-12-12 19:22:28.667329"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggutor"], ["email", "lyn@mraz-kertzmann.org"], ["password_digest", "$2a$12$uQILXGFYP2NeWqkCWyPbFuIyJsG1pg9qwmIbwPkselTVHDjcsVIpC"], ["created_at", "2021-12-12 19:22:28.910067"], ["updated_at", "2021-12-12 19:22:28.910067"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gengar"], ["email", "marcela@mante.org"], ["password_digest", "$2a$12$d2d.CPOJMSA0VvTB8c/bz.vlqyfLnXkcbn9rRpoVGYwSyzlzjXiDa"], ["created_at", "2021-12-12 19:22:29.152963"], ["updated_at", "2021-12-12 19:22:29.152963"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dratini"], ["email", "newton.tromp@dickens.io"], ["password_digest", "$2a$12$jpvwRsS9uqDmVh1kV/nNpO164j65B.qoxq9g/Pxo82I4T41y8IXhG"], ["created_at", "2021-12-12 19:22:29.387108"], ["updated_at", "2021-12-12 19:22:29.387108"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Marowak"], ["email", "emery.barrows@gleichner-gottlieb.net"], ["password_digest", "$2a$12$8dZExT8vBf1hd6HTCynqYuYXuMCi9lyF8aS2ZCRMY8ZJ3wIZiUaSe"], ["created_at", "2021-12-12 19:22:29.630678"], ["updated_at", "2021-12-12 19:22:29.630678"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dugtrio"], ["email", "corrine@schaden.name"], ["password_digest", "$2a$12$8Q/1wX2dDDT1sEvb8aVzaOD8aNHn.VtpfRZ.aCkioQ7p/gdt6bXqy"], ["created_at", "2021-12-12 19:22:29.872184"], ["updated_at", "2021-12-12 19:22:29.872184"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weezing"], ["email", "camie@armstrong.org"], ["password_digest", "$2a$12$1Qcf9.gy8Tcx5MmIcYUb8uZkcbL2f8mxhCO6oTc2Y5Ub4.kGxWJIi"], ["created_at", "2021-12-12 19:22:30.118477"], ["updated_at", "2021-12-12 19:22:30.118477"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machamp"], ["email", "judith.kirlin@smith-paucek.net"], ["password_digest", "$2a$12$cOaVs.9WKsyU5.tSPHUdb.r51c7n8FqZsO0Cuzr0q.uU30WayjjVO"], ["created_at", "2021-12-12 19:22:30.362814"], ["updated_at", "2021-12-12 19:22:30.362814"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Venonat"], ["email", "jewel@bosco-goodwin.info"], ["password_digest", "$2a$12$8QCMIYX0JTBW0XdOm/xhcuMUfBzU5QDIga4P8cETudIBaGBqc567a"], ["created_at", "2021-12-12 19:22:30.598975"], ["updated_at", "2021-12-12 19:22:30.598975"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Diglett"], ["email", "jean@schmeler.io"], ["password_digest", "$2a$12$bb80R8fryKFF0D4yiEndf.s3UNXtHk61HZPtvYHrOa81Lil3UKKlm"], ["created_at", "2021-12-12 19:22:30.838492"], ["updated_at", "2021-12-12 19:22:30.838492"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Mime"], ["email", "zola.bosco@osinski-barton.net"], ["password_digest", "$2a$12$9UvddceC03O.QYqE/pPOlux8lUXlMYY47/y7GEZNPPFPgye9wQc/a"], ["created_at", "2021-12-12 19:22:31.078759"], ["updated_at", "2021-12-12 19:22:31.078759"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vulpix"], ["email", "eloy_champlin@jacobs-streich.biz"], ["password_digest", "$2a$12$dwa4w0ZBebFgAVionsjf1OJN.ICDURrzOPID0sgyQqAFC3jcFCcY."], ["created_at", "2021-12-12 19:22:31.313717"], ["updated_at", "2021-12-12 19:22:31.313717"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oddish"], ["email", "esmeralda@schumm.biz"], ["password_digest", "$2a$12$qFFJGYHwemyjsN3F7RvRIOv2RfXBAE.EgGrvc3ACwVGramsPaomAq"], ["created_at", "2021-12-12 19:22:31.550748"], ["updated_at", "2021-12-12 19:22:31.550748"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Diglett"], ["email", "theresia@little-williamson.com"], ["password_digest", "$2a$12$u.6bqiBhLxuGsCBUmGGHge4adTrnc.e5Dy5JQvO6biRg1kelIJ1py"], ["created_at", "2021-12-12 19:22:31.791335"], ["updated_at", "2021-12-12 19:22:31.791335"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggutor"], ["email", "pierre@smitham.net"], ["password_digest", "$2a$12$bvVSGAwDbDBeajvaCsVSEuBZ3sB3PwNNJpWIrHc7VH6etydtxAb.S"], ["created_at", "2021-12-12 19:22:32.035007"], ["updated_at", "2021-12-12 19:22:32.035007"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cloyster"], ["email", "jimmie@abshire.co"], ["password_digest", "$2a$12$yQAkfPPhQVPYmMi.nPPl5.rPF1sX8MO6AZt4bziIXy./SjHdqSLlO"], ["created_at", "2021-12-12 19:22:32.293351"], ["updated_at", "2021-12-12 19:22:32.293351"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electrode"], ["email", "inge_walsh@bednar-ratke.name"], ["password_digest", "$2a$12$4wERTGKSyuFV0/KdweatxugWyew7YouHX7xv/s61MajzvwbbLCtpq"], ["created_at", "2021-12-12 19:22:32.537264"], ["updated_at", "2021-12-12 19:22:32.537264"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidoran"], ["email", "pablo_wisozk@stehr.io"], ["password_digest", "$2a$12$N8Kvp4Oj5QscT4MpCdZAKuM9MSvtqRFyTb1Pdg1LgMIT5cVICA4aS"], ["created_at", "2021-12-12 19:22:32.778423"], ["updated_at", "2021-12-12 19:22:32.778423"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zapdos"], ["email", "chong@hodkiewicz.org"], ["password_digest", "$2a$12$oseHsbHI62q1s5cra1Kw5.hObVDnVykZFyjCG777WLax5KDD/UYaO"], ["created_at", "2021-12-12 19:22:33.020809"], ["updated_at", "2021-12-12 19:22:33.020809"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Charmander"], ["email", "flavia@okon.co"], ["password_digest", "$2a$12$ChYq05PsvQXMaJ.hqLMXWeCQ0yqslrSVDr8eB2fX3rTz2mJQ0vDAO"], ["created_at", "2021-12-12 19:22:33.270152"], ["updated_at", "2021-12-12 19:22:33.270152"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Poliwhirl"], ["email", "archie_cassin@schroeder-lemke.net"], ["password_digest", "$2a$12$XoYgwPrc0OxjZxLei1u7zuR4V96dh2wnLb1hZPB6jMvTzGMuNp4xC"], ["created_at", "2021-12-12 19:22:33.514015"], ["updated_at", "2021-12-12 19:22:33.514015"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Omanyte"], ["email", "anthony@towne.name"], ["password_digest", "$2a$12$M4g4AX8VYqposTqn9cHQNeT4rYXCwGYaZJgWMx.533GTbvTEUZffy"], ["created_at", "2021-12-12 19:22:33.748973"], ["updated_at", "2021-12-12 19:22:33.748973"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Vileplume"], ["email", "coleman@legros.io"], ["password_digest", "$2a$12$UckPTktYdIDDOVLPj3Ox8.kiVefLCZouppRcBUoCT5qVeSOts9bQ2"], ["created_at", "2021-12-12 19:22:33.984170"], ["updated_at", "2021-12-12 19:22:33.984170"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tauros"], ["email", "elias.boyer@keeling-kuphal.net"], ["password_digest", "$2a$12$JwmFOwOj1U.PZ8LQKK1evuEjLZyGgPb.kVtVtLAnDele03C2mi19."], ["created_at", "2021-12-12 19:22:34.219593"], ["updated_at", "2021-12-12 19:22:34.219593"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Voltorb"], ["email", "ronni@stracke.com"], ["password_digest", "$2a$12$/sCk9WOr4uTHTrakZNCAw.N8se4xBb.mhswREbAH1NFGTc5CRUnji"], ["created_at", "2021-12-12 19:22:34.453734"], ["updated_at", "2021-12-12 19:22:34.453734"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machop"], ["email", "floy@swift-lesch.co"], ["password_digest", "$2a$12$VNrkRvoqwJO.Lb7XiRs0/.fdiGOPSYoZ5b/CuVA/wixLG7aLeRlUy"], ["created_at", "2021-12-12 19:22:34.691767"], ["updated_at", "2021-12-12 19:22:34.691767"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clefairy"], ["email", "amos@littel.org"], ["password_digest", "$2a$12$4yJi3TVhkT9szYEhlmv/F.WM3amkGf/sDYuD4YV7omH2xzcbTRoSu"], ["created_at", "2021-12-12 19:22:34.935812"], ["updated_at", "2021-12-12 19:22:34.935812"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Koffing"], ["email", "duane@shields.io"], ["password_digest", "$2a$12$BMc8NlJ8ZusTU7Y4oe2Rqeudo4QzxV00.Zv8h//C/B6wgQYCKxGeK"], ["created_at", "2021-12-12 19:22:35.183555"], ["updated_at", "2021-12-12 19:22:35.183555"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hypno"], ["email", "tony@hayes-terry.info"], ["password_digest", "$2a$12$SRMoWkc9ZghKxrAuicCpZO.VhcMFfhYLPrOQhkeNME8Gy7TLiQvZ2"], ["created_at", "2021-12-12 19:22:35.422605"], ["updated_at", "2021-12-12 19:22:35.422605"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dugtrio"], ["email", "katlyn.graham@cremin.name"], ["password_digest", "$2a$12$EWQaDKdvwto4MIJsvogdouurLQ9dez.R36Z5LOGrk0JFs9PVhCRZm"], ["created_at", "2021-12-12 19:22:35.660126"], ["updated_at", "2021-12-12 19:22:35.660126"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hypno"], ["email", "gregorio_ritchie@greenfelder.info"], ["password_digest", "$2a$12$mJ0aDloDOG5Job9BajL3YetoEDBuoUD/CCnTVBa5f5lR3dupWg/rC"], ["created_at", "2021-12-12 19:22:35.896950"], ["updated_at", "2021-12-12 19:22:35.896950"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Exeggcute"], ["email", "jacquline.kirlin@heathcote.com"], ["password_digest", "$2a$12$2rHaGOv99HBA8YBr7m/HWOhRm0fr.tAOyRA2adDweDBrsVwSgaHcK"], ["created_at", "2021-12-12 19:22:36.139488"], ["updated_at", "2021-12-12 19:22:36.139488"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Grimer"], ["email", "zada.hauck@cummerata.com"], ["password_digest", "$2a$12$Ps68M1lGnUlhRtRUJ3OH6uyqfoOCAGENUEWmlTyR2/LJHf/HH6LoS"], ["created_at", "2021-12-12 19:22:36.375387"], ["updated_at", "2021-12-12 19:22:36.375387"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Muk"], ["email", "nadene.fay@hodkiewicz-rohan.com"], ["password_digest", "$2a$12$3icDFopx.Bl8k/nWFSSTBOR3P8YbbemOKVXW9QERLgYRlA7WocKg2"], ["created_at", "2021-12-12 19:22:36.615364"], ["updated_at", "2021-12-12 19:22:36.615364"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fearow"], ["email", "eva_towne@roberts-mcdermott.io"], ["password_digest", "$2a$12$WdIhu5PvKZe7/lTgXS9DmOZM7yE8fs6mPCHLjUO/2WefB7DTNq.A6"], ["created_at", "2021-12-12 19:22:36.865997"], ["updated_at", "2021-12-12 19:22:36.865997"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bulbasaur"], ["email", "alvin.ferry@ullrich.biz"], ["password_digest", "$2a$12$r6cKmrbYUvdl.YJdUUYcFO1XKExsTl/jXhwLTwmngiyrwo7vfpfPS"], ["created_at", "2021-12-12 19:22:37.104098"], ["updated_at", "2021-12-12 19:22:37.104098"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machoke"], ["email", "shelton@schaefer-konopelski.co"], ["password_digest", "$2a$12$ACniv39ld6n8LOyGiGkVWO/gTkLSFH6Dm.aa/2kIGroVv2A1uyCyK"], ["created_at", "2021-12-12 19:22:37.345790"], ["updated_at", "2021-12-12 19:22:37.345790"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Machamp"], ["email", "anabel.hauck@balistreri.org"], ["password_digest", "$2a$12$t6aAgthpBc4m3hGQbmM43.15G79pfJaMaL.24FwTS0BnBU69sA/Qu"], ["created_at", "2021-12-12 19:22:37.584483"], ["updated_at", "2021-12-12 19:22:37.584483"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Farfetch'd"], ["email", "maria@carroll.io"], ["password_digest", "$2a$12$JSOm/sI7NpQF0MVw/k2Bpe6SlndGRIrUvylc6J62uzvBAVhPu.f6u"], ["created_at", "2021-12-12 19:22:37.826273"], ["updated_at", "2021-12-12 19:22:37.826273"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidorina"], ["email", "lovetta_howell@flatley-parker.io"], ["password_digest", "$2a$12$2Ya9wDjB2zgGe0uV3evVG.HgYBvr.gUveIHnjAKfnrWZfCcOnjDoG"], ["created_at", "2021-12-12 19:22:38.063625"], ["updated_at", "2021-12-12 19:22:38.063625"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bellsprout"], ["email", "jerrold@ortiz.net"], ["password_digest", "$2a$12$0O09dWXjEU3SA/CJk.dtJOIXdgiBBEpdX2FJfNRxw/JrH.l3FsKWq"], ["created_at", "2021-12-12 19:22:38.301340"], ["updated_at", "2021-12-12 19:22:38.301340"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Geodude"], ["email", "daina_ebert@rohan.net"], ["password_digest", "$2a$12$LKh2ch4elABx3WvzLWqu0.gOj2ZQUWHM2.YtzQqHiHB5m02YYFuo6"], ["created_at", "2021-12-12 19:22:38.538092"], ["updated_at", "2021-12-12 19:22:38.538092"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Diglett"], ["email", "jacques_witting@watsica.net"], ["password_digest", "$2a$12$4YhCDOPGtN4QK81ADm7ha.OcEimrEt/IXqP07aE1uEIo5pdCjju6C"], ["created_at", "2021-12-12 19:22:38.775483"], ["updated_at", "2021-12-12 19:22:38.775483"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nidorino"], ["email", "paul@rodriguez-paucek.com"], ["password_digest", "$2a$12$fYGSCSbIALDn5A9aylqGpOU0pA1Zw3hFRd38qgB.7DImb8N709ZJq"], ["created_at", "2021-12-12 19:22:39.015073"], ["updated_at", "2021-12-12 19:22:39.015073"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/12" for ::1 at 2021-12-12 19:23:03 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 1.0ms | Allocations: 6906)
+
+
+Started GET "/users" for ::1 at 2021-12-12 19:23:04 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:8
+  Rendered users/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 7573)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.2ms | Allocations: 9084)
+
+
+
+ArgumentError - Nil location provided. Can't build URI.:
+  app/views/users/index.html.erb:12
+  app/views/users/index.html.erb:8
+
+Started POST "/__better_errors/751e28c9fc6f378b/variables" for ::1 at 2021-12-12 19:23:04 +0900
+Started GET "/users/12" for ::1 at 2021-12-12 19:23:10 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 219)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.8ms | Allocations: 7152)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (6.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPicture Destroy (0.5ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPicture Destroy (0.4ms)[0m  [1m[31mDELETE FROM "pictures" WHERE "pictures"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPicture Load (0.8ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 28]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 29]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 30]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 31]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 32]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 33]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 34]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 35]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 36]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 37]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 38]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 39]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 40]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 41]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 42]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 43]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 44]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 45]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 46]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 47]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 48]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 49]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 50]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 52]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 53]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 54]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 55]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 56]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 57]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 58]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 59]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 60]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 62]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users" for ::1 at 2021-12-12 19:25:13 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms | Allocations: 1316)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 19:25:13 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 738)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 7946)
+
+
+Started GET "/users/new" for ::1 at 2021-12-12 19:25:14 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1528)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.6ms | Allocations: 7764)
+
+
+Started GET "/users/new" for ::1 at 2021-12-12 19:27:30 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1669)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.4ms | Allocations: 9292)
+
+
+Started GET "/users/new" for ::1 at 2021-12-12 19:27:42 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1662)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.2ms | Allocations: 9343)
+
+
+Started GET "/users/new" for ::1 at 2021-12-12 19:27:54 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 60ms (Views: 53.1ms | ActiveRecord: 0.2ms | Allocations: 9353)
+
+
+Started POST "/users" for ::1 at 2021-12-12 19:28:13 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"LWYEsuakx6fjjopCfe0/ndmeLhrztUQpgY5xHc6blOWD8JCibBMTaKoUIobc9kuVhLYhi8bmioSfnrWQMhd6DA==", "user"=>{"name"=>"babymetal", "email"=>"baby@metal.com", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb696bfbec8 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-htny75.png>, @original_filename="スクリーンショット 2021-12-12 19.26.50.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[image]\"; filename=\"\xE3\x82\xB9\xE3\x82\xAF\xE3\x83\xAA\xE3\x83\xBC\xE3\x83\xB3\xE3\x82\xB7\xE3\x83\xA7\xE3\x83\x83\xE3\x83\x88 2021-12-12 19.26.50.png\"\r\nContent-Type: image/png\r\n">, "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "babymetal"], ["email", "baby@metal.com"], ["password_digest", "$2a$12$DHrBiIA0WjAY9iYPSY0POeC4QfMX1Hhd/pqeSfFoLQL46feliu0n6"], ["created_at", "2021-12-12 19:28:13.672241"], ["updated_at", "2021-12-12 19:28:13.672241"], ["image", "スクリーンショット_2021-12-12_19.26.50.png"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/users/63
+Completed 302 Found in 276ms (ActiveRecord: 1.5ms | Allocations: 5551)
+
+
+Started GET "/users/63" for ::1 at 2021-12-12 19:28:13 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/sessions/new
+Filter chain halted as :login_required rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1302)
+
+
+Started GET "/sessions/new" for ::1 at 2021-12-12 19:28:13 +0900
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 734)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.3ms | Allocations: 7795)
+
+
+Started POST "/sessions" for ::1 at 2021-12-12 19:28:17 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"S4jP4T//xBNC62eJGoWnHVNkqpQXrSRRN8/McWe26U7lHlvxtUgQ3Atxz027ntMVDkylBSL+6vwp3wj8mzoHpw==", "session"=>{"email"=>"baby@metal.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "baby@metal.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/63
+Completed 302 Found in 267ms (ActiveRecord: 0.4ms | Allocations: 1674)
+
+
+Started GET "/users/63" for ::1 at 2021-12-12 19:28:17 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 472)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.5ms | Allocations: 7276)
+
+
+Started GET "/users/63" for ::1 at 2021-12-12 19:28:50 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 557)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 8718)
+
+
+Started GET "/users/63" for ::1 at 2021-12-12 19:29:07 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 9.3ms | ActiveRecord: 0.7ms | Allocations: 8853)
+
+
+Started GET "/pictures/new" for ::1 at 2021-12-12 19:29:12 +0900
+Processing by PicturesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/new.html.erb within layouts/application
+  Rendered pictures/_form.html.erb (Duration: 3.9ms | Allocations: 1098)
+  Rendered pictures/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1483)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.4ms | Allocations: 8663)
+
+
+Started POST "/pictures/confirm" for ::1 at 2021-12-12 19:29:25 +0900
+Processing by PicturesController#confirm as HTML
+  Parameters: {"authenticity_token"=>"5tXSZAF0Hf0NDw0ApEzJHWgVVtpEu1FvLZZCIjnRjVycINHt2SE8NZa07Og8S4xjHDxTRT1HX0Hp+82P+VMZOw==", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb69c851510 @tempfile=#<Tempfile:/var/folders/q1/y160hflj7cb131jhn60dhdsh0000gn/T/RackMultipart20211212-10826-mz4067.jpeg>, @original_filename="0adpkkj--300x231.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"0adpkkj--300x231.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"金閣寺"}, "commit"=>"Create Picture"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/confirm.html.erb within layouts/application
+  Rendered pictures/confirm.html.erb within layouts/application (Duration: 2.3ms | Allocations: 640)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 8554)
+
+
+Started POST "/pictures" for ::1 at 2021-12-12 19:29:27 +0900
+Processing by PicturesController#create as HTML
+  Parameters: {"authenticity_token"=>"H7MoIV5YkfBrAnn4EZQAMPjAdDCHqUw/7YGTFtlHCRaxJbwx1O9FPyKY0Tywj3Q4peh7obL6gpLzkVebJcvn/w==", "picture"=>{"image"=>"/uploads/tmp/1639304965-801687881015496-0007-6560/0adpkkj--300x231.jpeg", "image_cache"=>"1639304965-801687881015496-0007-6560/0adpkkj--300x231.jpeg", "content"=>"金閣寺"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[36mPicture Create (1.3ms)[0m  [1m[32mINSERT INTO "pictures" ("image", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["image", "0adpkkj--300x231.jpeg"], ["content", "金閣寺"], ["created_at", "2021-12-12 19:29:27.113331"], ["updated_at", "2021-12-12 19:29:27.113331"], ["user_id", 63]]
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pictures_controller.rb:26:in `block in create'
+Redirected to http://localhost:3000/pictures/22
+Completed 302 Found in 13ms (ActiveRecord: 2.6ms | Allocations: 5390)
+
+
+Started GET "/pictures/22" for ::1 at 2021-12-12 19:29:27 +0900
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/pictures_controller.rb:64:in `set_picture'
+  Rendering pictures/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/pictures/show.html.erb:13
+  Rendered pictures/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1035)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 7822)
+
+
+Started GET "/pictures" for ::1 at 2021-12-12 19:29:30 +0900
+Processing by PicturesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering pictures/index.html.erb within layouts/application
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures"[0m
+  ↳ app/views/pictures/index.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 63], ["LIMIT", 1]]
+  ↳ app/views/pictures/index.html.erb:8
+  Rendered pictures/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1778)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.7ms | Allocations: 7962)
+
+
