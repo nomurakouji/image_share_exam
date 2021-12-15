@@ -21,9 +21,9 @@
     <%= form.text_area :content %>
   </div>
 
- <% if @picture.user == @current_user %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
- <% end %>
+  <% if @picture.user == @current_user %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
 <% end %>
