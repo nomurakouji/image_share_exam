@@ -1,0 +1,20 @@
+<h1>お気に入りindex</h1>
+<table>
+  <tbody>
+    <% if @favorites.present? %>
+      <% @favorites.each do |favorite| %>
+        <tr>
+          <td><%= favorite.picture.user.name %></td>
+          <td><%= favorite.picture.content %></td>
+          <td><%= image_tag favorite.picture.image.url if favorite.picture.image.url.present? %></td>
+          <td><%= link_to 'Show', favorite.picture %>
+        </tr>
+      <% end %>
+    <% else %>
+      <p> No Favorites Posts yet!</p>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to 'Index', pictures_path %>
