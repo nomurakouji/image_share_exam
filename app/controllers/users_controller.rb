@@ -16,12 +16,22 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
+    if @user.id == @current_user.id
+      render "show"
+    else
+      redirect_to users_path
+    end
   end
   def index
     @users = User.all
   end
   def edit
     @user = User.find(params[:id])
+    if @user.id == @current_user.id
+      render "edit"
+    else
+      redirect_to users_path
+    end
   end
   def update
     @user = User.find(params[:id])
@@ -37,7 +47,7 @@ class UsersController < ApplicationController
   end
   ###
   # def logged_in_user
-  #   if @user.id != @current_user.id 
+  #   if @user.id == @current_user.id
   #     redirect_to user_path
   #   end
   # end
