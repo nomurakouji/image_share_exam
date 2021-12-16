@@ -1,12 +1,19 @@
 h1{
-    background: plum;
-    color: white;
+  color: white;
 }
 body{
-    background-color: pink;
+  color:white;
+  background-image:url(./images/heart.jpeg) ;
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #999;
 }
 .footer {
-    background: plum;
-    color: white;
-    padding: 1rem 0;
+  color: white;
+  padding: 1rem 0;
+}
+a{
+  color:white
 }
