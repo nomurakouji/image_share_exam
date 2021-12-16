@@ -10,9 +10,11 @@
     <td><%=user.name%></td>
     <td><%=user.email%></td>
     <td><%=image_tag user.image.url%></td>
-    <td><%=link_to '詳細を確認する', user_path(user.id) %></td>
+　  <td><%=link_to '詳細を確認する', user_path(user.id) %></td>
   </tr>
 <% end %>
 </table>
+
+
 
 <%= link_to 'Index', pictures_path %>
