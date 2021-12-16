@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  ###
-  # before_action :logged_in_user, only: [:edit, :update, :destroy]
-  ###
   skip_before_action :login_required, only: [:new, :create]
   def new
     @user = User.new
@@ -45,11 +42,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :image, :image_cache, :password, :password_confirmation)
   end
-  ###
-  # def logged_in_user
-  #   if @user.id == @current_user.id
-  #     redirect_to user_path
-  #   end
-  # end
-  ###
 end

@@ -1,18 +1,18 @@
 <h1>User#edit</h1>
 <%= form_for(@user, url: user_path(@user)) do |f| %>
-    <div>
-        <%= f.label :name %><br>
-        <%= f.text_field :name, autofocus: true, :placeholder =>"#{@user.name}" %>
-    </div>
-    <div>
-        <%= f.label :email %><br>
-        <%= f.text_area :email, :placeholder =>"#{@user.email}" %>
-    </div>
-    <div>
-        <%= f.label :image %><br>
-        <%= f.file_field :image, :placeholder =>"#{@user.image}" %>
-    </div><br>
-    <div><%= f.submit "complete edit" %></div>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, autofocus: true, :placeholder =>"#{@user.name}" %>
+  </div>
+  <div>
+    <%= f.label :email %><br>
+    <%= f.text_area :email, :placeholder =>"#{@user.email}" %>
+  </div>
+  <div>
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :placeholder =>"#{@user.image}" %>
+  </div><br>
+  <div><%= f.submit "complete edit" %></div>
 <% end %>
 <%= link_to 'Show', @user %> 
 <%= link_to 'Back', users_path %>
